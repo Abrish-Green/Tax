@@ -1,6 +1,6 @@
+import { TaxListItem } from './TaxListItem';
 import React from 'react'
-import { Field, Formik } from 'formik';
-
+import { Formik } from 'formik';
 const ListingTax = () => {
   return (
     <>
@@ -13,17 +13,12 @@ const ListingTax = () => {
         alert(JSON.stringify(values, null, 2));
       }}
     >
-      <div className="listing-tax border mt-3">
-        <div className="">
-          <div className='text-sm w-full inline-flex items-center gap-2 bg-gray-200 px-3 py-2'>
-              <span>
-                <label><Field type="checkbox" name="toggle" /></label>
-            </span>
-            Parent Header</div>  
-        </div>
-        </div>
-        </Formik>
-      </>
+      <div className="listing-tax mt-3">
+          <TaxListItem />
+          <TaxListItem     />
+      </div>
+    </Formik>
+  </>
   )
 }
 
