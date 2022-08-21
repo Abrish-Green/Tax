@@ -1,7 +1,8 @@
 import React from "react";
 import { Field } from 'formik';
 import ChildListItem from './ChildListItem';
-export function TaxListItem() {
+import { ChildList } from './Index';
+export function TaxListItem({title, list}:ChildList) {
     return (
         <>
          <div className="tax-list-item">
@@ -12,12 +13,19 @@ export function TaxListItem() {
                         </label>
               </span>
               <span>
-                Parent Header
+                { title }
               </span>
           </div> 
-            <ul className='px-10 py-4'>
-                    <ChildListItem />
-                    <ChildListItem     />
+                <ul className='px-10 py-4'>
+                    {
+                        list && list.map((item) => {
+                            return (
+                                <>
+                                    <ChildListItem item={item} />
+                                </>
+                                )
+                        })
+                    }
             </ul>  
         </div>
         </>

@@ -1,37 +1,17 @@
 import { UserInput } from './UserInput';
 import { Filter } from './Filter';
 import React from 'react'
-import {
-   Formik,
-   Form,
-   Field,
-} from 'formik';
- 
-interface AddTaxProps {
-  name: string,
-  rate: number
-  
- }
-const AddTax = () => {
-  const initialValues: AddTaxProps = { name: '', rate: 0.05 };
+
+const AddTax = ({ error, touched }: { error: any, touched: any }) => {
+  console.log(error)
   return (
       <>
       <div className="text-2xl p-2"> Add Tax</div>
       <div className="">
-          <Formik
-            initialValues={initialValues}
-            onSubmit={(values, actions) => {
-              console.log({ values, actions });
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }}
-          >
-          <Form>
-           <UserInput />
+        <UserInput err={error} touched={ touched } />
            <Filter />
-         </Form>
-       </Formik>
       </div>
+      
       </>
   )
 }

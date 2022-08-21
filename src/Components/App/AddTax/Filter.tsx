@@ -7,13 +7,13 @@ export function Filter() {
               <ul className='p-2 list-none'>
                 <li className='p-1'>
                   <label className='flex items-center'>
-                    <Field type="radio" name="picked" value="One" />
+                    <Field type="radio" name="applied_to" value="all" />
                       <span className='px-1'>Apply to all items in collection</span>
                   </label>
                 </li>
                 <li className='p-1'>
                    <label className='flex items-center'>
-                    <Field type="radio" name="picked" value="Two" />
+                    <Field type="radio" name="applied_to" value="some" />
                     <span className='px-1'>Apply to specific items</span>
                   </label>
                 </li>
